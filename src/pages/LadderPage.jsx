@@ -1,6 +1,6 @@
 // LadderPage.jsx
 import React from 'react';
-import Pyramid from '../components/Pyramid'; // Asegúrate de que la ruta sea correcta
+import Pyramid from '../components/Pyramid';
 
 const LadderPage = () => {
   const playersData = [  
@@ -30,7 +30,6 @@ const LadderPage = () => {
       
       {/* Contenido del componente */}
       <div className="relative z-10 flex items-center justify-center min-h-screen">
-        {/* Eliminar las clases de fondo blanco y opacidad */}
         <div className="max-w-md w-full rounded-xl p-6 shadow-xl">
           <Pyramid players={playersData} />
         </div>

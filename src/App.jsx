@@ -20,7 +20,6 @@ function App() {
         <Route path="/escalera" element={<LadderPage />} />
         <Route path="/contacto" element={<ContactPage />} />
         <Route path="/sobre-nosotros" element={<AboutPage />} />
-        {/* No se necesitan más rutas duplicadas */}
       </Routes>
     </Router>
   );

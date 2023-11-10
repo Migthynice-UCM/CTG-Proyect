@@ -1,6 +1,6 @@
 // LoginPage.jsx
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext'; // Importa el hook useAuth
+import { useAuth } from '../context/AuthContext'; // Import del hook useAuth
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');

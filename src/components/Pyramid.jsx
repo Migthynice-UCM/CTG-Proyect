@@ -10,7 +10,7 @@ const Pyramid = ({ players }) => {
   const handleChallengeClick = () => {
     const confirmation = window.confirm('¿Estás seguro de que deseas desafiar a este jugador?');
     if (confirmation) {
-      // Aquí puedes añadir la lógica para manejar el desafío
+      // Aquí añadir la lógica para manejar el desafío
       console.log(`Desafío enviado a ${selectedPlayer.name}`);
     }
     setSelectedPlayer(null); // Cerrar la tarjeta de detalles

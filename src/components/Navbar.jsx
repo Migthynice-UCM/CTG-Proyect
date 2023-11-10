@@ -1,7 +1,7 @@
 // Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiMenu } from 'react-icons/fi'; // Asegúrate de que react-icons esté instalado para usar esto
+import { FiMenu } from 'react-icons/fi'; // React-icons
 
 const Navbar = ({ isLoggedIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

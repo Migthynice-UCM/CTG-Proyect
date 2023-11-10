@@ -42,7 +42,7 @@ const AboutPage = () => {
         </p>
         
         {/* Más contenido con información adicional */}
-        {/* Aquí puedes añadir más texto o componentes */}
+        {/* Aquí añadir más texto o componentes */}
       </div>
     </div>
   );
