@@ -1,0 +1,6 @@
+/* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aquí puedes agregar estilos personalizados si lo necesitas */

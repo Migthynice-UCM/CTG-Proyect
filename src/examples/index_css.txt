@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+/* Si necesitas estilos personalizados adicionales, puedes añadirlos aquí. */
+/* Recuerda que Tailwind ya proporciona muchas utilidades para el estilo, por lo que podrías no necesitar estilos adicionales. */
