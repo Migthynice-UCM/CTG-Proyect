@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { Button } from 'flowbite-react';
 import { HiOutlineArrowRight } from 'react-icons/hi';
-import Navbar from '../components/Navbar';
+import NavbarLogin from '../components/NavbarLogin';
 
-const HomePage = () => {
+const HomePageLogin = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-800">
-      {/* Navbar agregado en la parte superior */}
-      <Navbar />
-
+      <NavbarLogin/>
       <div className="flex-grow relative">
         <img 
           src="/ryan-searle-qjrjJnFypa0-unsplash.jpg" 
@@ -23,6 +21,7 @@ const HomePage = () => {
           <div className="text-center p-8">
             <h1 className="text-6xl font-bold text-white">Club de Tenis Graneros</h1>
             <p className="mt-4 text-xl text-white">Experiencia y pasión en cada juego</p>
+            {/* Botón centrado con el contenedor flex y margen automático */}
             <div className="mt-8 w-full flex justify-center">
               <Link to="/reservas">
                 <Button>
@@ -34,12 +33,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer agregado en la parte inferior */}
       <Footer />
     </div>
   );
 };
 
-export default HomePage;
-
+export default HomePageLogin;

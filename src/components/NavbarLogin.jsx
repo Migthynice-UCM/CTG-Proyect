@@ -1,9 +1,17 @@
-// Navbar.jsx
+// NavbarLogin.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi'; // React-icons
 
-const Navbar = ({ isLoggedIn }) => {
+
+function handleLogout() {
+  const navigate = useNavigate();
+  sessionStorage.clear();
+  navigate('/');
+}
+
+
+const NavbarLogin = ({ isLoggedIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -19,18 +27,21 @@ const Navbar = ({ isLoggedIn }) => {
             </div>
             {/* Lista de enlaces para pantallas grandes */}
             <div className="hidden md:flex items-center space-x-1">
-              <Link to="/" className="py-4 px-2 text-green-700 font-semibold">Home</Link>
+              <Link to="/admin/home" className="py-4 px-2 text-green-700 font-semibold">Home</Link>
+              <Link to="/reservas" className="py-4 px-2 text-green-700 font-semibold">Reservar</Link>
               <Link to="/escalera" className="py-4 px-2 text-green-700 font-semibold">Escalerilla</Link>
-              <Link to="/contacto" className="py-4 px-2 text-green-700 font-semibold">Contacto</Link>
-              <Link to="/sobre-nosotros" className="py-4 px-2 text-green-700 font-semibold">Sobre nosotros</Link>
+              <Link to="/admin/home" className="py-4 px-2 text-green-700 font-semibold">Fixture</Link>
+              <Link to="/admin/home" className="py-4 px-2 text-green-700 font-semibold">Mis Reservas</Link>
+
+
             </div>
           </div>
           {/* Botones de login/logout para pantallas grandes */}
           <div className="hidden md:flex items-center space-x-3">
             {isLoggedIn ? (
-              <Link to="/logout" className="py-2 px-2 font-medium text-green-500 rounded hover:bg-green-700 hover:text-white transition duration-300">Logout</Link>
+              <Link to="" className="py-2 px-2 font-medium text-green-500 rounded hover:bg-green-700 hover:text-white transition duration-300">Logout</Link>
             ) : (
-              <Link to="/login" className="py-2 px-2 font-medium text-green-500 rounded hover:bg-green-700 hover:text-white transition duration-300">Login</Link>
+              <Link to="/" onClick={handleLogout} className="py-2 px-2 font-medium text-green-500 rounded hover:bg-green-700 hover:text-white transition duration-300">Logout</Link>
             )}
           </div>
           {/* Botón de menú para dispositivos móviles */}
@@ -43,19 +54,22 @@ const Navbar = ({ isLoggedIn }) => {
       </div>
       {/* Menú desplegable para dispositivos móviles */}
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
-        <Link to="/" className="block py-2 px-4 text-sm hover:bg-green-500">Home</Link>
+        <Link to="/admin/home" className="block py-2 px-4 text-sm hover:bg-green-500">Home</Link>
         <Link to="/reservas" className="block py-2 px-4 text-sm hover:bg-green-500">Reservas</Link>
-        <Link to="/escalera" className="block py-2 px-4 text-sm hover:bg-green-500">Escalera</Link>
-        <Link to="/contacto" className="block py-2 px-4 text-sm hover:bg-green-500">Contacto</Link>
-        <Link to="/sobre-nosotros" className="block py-2 px-4 text-sm hover:bg-green-500">Sobre nosotros</Link>
+        <Link to="/escalera" className="block py-2 px-4 text-sm hover:bg-green-500">Escalerilla</Link>
+        <Link to="/admin/home" className="block py-2 px-4 text-sm hover:bg-green-500">Fixture</Link>
+        <Link to="/admin/home" className="block py-2 px-4 text-sm hover:bg-green-500">Mis reservas</Link>
+
+        
         {isLoggedIn ? (
           <Link to="/logout" className="block py-2 px-4 text-sm hover:bg-green-500">Logout</Link>
           ) : (
-            <Link to="/login" className="block py-2 px-4 text-sm hover:bg-green-500">Login</Link>
+            <Link to="/" onClick={handleLogout} className="block py-2 px-4 text-sm hover:bg-green-500">Logout</Link>
+            
           )}
         </div>
       </nav>
     );
     };
     
-    export default Navbar;
+    export default NavbarLogin;
