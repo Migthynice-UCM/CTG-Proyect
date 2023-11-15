@@ -1,5 +1,6 @@
 // LadderPage.jsx
 import React from 'react';
+import Navbar from '../components/Navbar';
 import Pyramid from '../components/Pyramid';
 
 const LadderPage = () => {
@@ -16,30 +17,32 @@ const LadderPage = () => {
   ];
 
   return (
-    <div className="relative min-h-screen">
-      {/* Fondo difuminado */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/ryan-searle-qjrjJnFypa0-unsplash.jpg" 
-          alt="Fondo de cancha de tenis"
-          className="w-full h-full object-cover"
-          style={{ filter: 'blur(8px)' }}
-        />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
-      
-      {/* Contenido del componente */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="max-w-md w-full rounded-xl p-6 shadow-xl">
-          <Pyramid players={playersData} />
+    <>
+      <Navbar /> {/* La Navbar ahora no está dentro del div con z-index */}
+      <div className="relative min-h-screen">
+        {/* Fondo difuminado */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/ryan-searle-qjrjJnFypa0-unsplash.jpg" 
+            alt="Fondo de cancha de tenis"
+            className="w-full h-full object-cover"
+            style={{ filter: 'blur(8px)' }}
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        
+        {/* Contenido del componente */}
+        <div className="relative z-10 flex items-center justify-center min-h-screen">
+          <div className="max-w-md w-full rounded-xl p-6 shadow-xl">
+            <Pyramid players={playersData} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default LadderPage;
-
 
 
 

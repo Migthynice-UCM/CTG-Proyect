@@ -8,8 +8,7 @@ import LadderPage from './pages/LadderPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import './App.css';
-import NavbarLogin from './components/NavbarLogin';
-import HomePageLogin from './pages/HomePageLogin';
+//import HomePageLogin from './pages/HomePageLogin';
 
 
 
@@ -74,7 +73,8 @@ return (
             {getUser() === "ADMIN" && (
                 <>
                 <Route path="/admin/reserva" element={<ReservationsPage/>} />
-                <Route path="/admin/home" element={<HomePageLogin/>} />
+                <Route path="/admin/home" element={<HomePage/>} />
+                <Route path="/reservas" element={<ReservationsPage />} />
                 </>
             )}
               <Route path="/login" element={<LoginPage />} />
